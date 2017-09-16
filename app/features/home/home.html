@@ -1,3 +1,15 @@
 
 <h2>Home</h2>
 <p>{{home.message}}</p>
+<h3>Without anything</h3>
+<my-name></my-name>
+<h3>With simple string</h3>
+<my-name simplestring="simple static from angular"></my-name>
+<h3>With dynamic string</h3>
+<my-name simplestring="{{home.message}}"></my-name>
+<button ng-click="home.changeMessage()">Add period</button>
+<h3>With complex object</h3>
+<my-name id="mycomplex"></my-name>
+<button ng-click="home.modifyComplex()">Add line</button>
+
+
