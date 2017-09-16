@@ -7,14 +7,18 @@ import { Component, Prop } from '@stencil/core';
 })
 export class MyName {
 
-  @Prop() first: string;
+  @Prop() simplestring: string;
 
-  @Prop() last: string;
+  @Prop() strings: string[];
 
   render() {
     return (
       <div>
-        Hello, my name is {this.first} {this.last}
+        <p>Simple string is {this.simplestring}</p>
+        { this.strings ? (
+          <ul>
+          { this.strings.map(s => <li>{s}</li>) }
+        </ul>) : <p>No strings yet</p>}
       </div>
     );
   }
