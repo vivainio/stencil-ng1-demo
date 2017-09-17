@@ -19,6 +19,7 @@ export class MyName {
           <ul>
           { this.strings.map(s => <li>{s}</li>) }
         </ul>) : <p>No strings yet</p>}
+        <slot></slot>
       </div>
     );
   }

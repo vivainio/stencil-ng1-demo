@@ -11,5 +11,11 @@
 <h3>With complex object</h3>
 <my-name id="mycomplex"></my-name>
 <button ng-click="home.modifyComplex()">Add line</button>
+<h3>With some slot content</h3>
+<my-name simplestring="{{home.message}}">
+    <p>Nested componentant 'transcluded' from angular
+        <span ng-bind="home.message"></span>
+    </p>
+</my-name>
 
 
