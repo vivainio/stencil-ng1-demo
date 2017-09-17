@@ -14,8 +14,8 @@ class HomeController {
     });
   }
   changeMessage() {
+    // this.message is used in {{ }} binding, hence modifying it assigns new value to the web component directly
     this.message = this.message + ".";
-    console.log("click");
   }
 
   modifyComplex() {
