@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, EventEmitter, Event } from "@stencil/core";
 
 
 @Component({
@@ -11,14 +11,21 @@ export class MyName {
 
   @Prop() strings: string[];
 
+  @Event() onListClick: EventEmitter;
+  listClick(e) {
+    console.log('list item clicked in stencil');
+    this.onListClick.emit(e);
+  }
   render() {
     return (
       <div>
         <p>Simple string is {this.simplestring}</p>
         { this.strings ? (
           <ul>
-          { this.strings.map(s => <li>{s}</li>) }
-        </ul>) : <p>No strings yet</p>}
+          { this.strings.map(s => <li onClick={ e => this.listClick(e) }>
+          {s}
+          </li>) }
+        </ul>) : <p onClick={_ => this.listClick(null) }>No strings yet</p>}
         <slot></slot>
       </div>
     );

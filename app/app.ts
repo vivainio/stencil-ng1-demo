@@ -10,9 +10,7 @@ export function start() {
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.
             when('/home', {
-                templateUrl: 'features/home/home.html',
-                controller: 'HomeController',
-                controllerAs: 'home'
+                template: '<example-component></example-component>',
             }).
             otherwise({
                 redirectTo: '/home'

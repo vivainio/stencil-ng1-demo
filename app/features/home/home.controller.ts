@@ -5,6 +5,7 @@ class HomeController {
     this.message = "a lot to do here...";
     this.complex = ["a", "complex", "object"];
   }
+
   changeMessage() {
     this.message = this.message + ".";
     console.log("click");
@@ -17,6 +18,11 @@ class HomeController {
   }
 }
 
-angular.module("app").controller("HomeController", HomeController);
+angular.module("app").component("exampleComponent", {
+        controller: HomeController,
+        templateUrl: "features/home/home.html"
+})
+
+//angular.module("app").controller("HomeController", HomeController);
 
 export {};
