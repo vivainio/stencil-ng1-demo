@@ -41,7 +41,8 @@
     "express": "node server.js",
     "dev": "node ./node_modules/gulp/bin/gulp.js dev",
     "minify": "node ./node_modules/gulp/bin/gulp.js minify",
-    "clean": "node ./node_modules/gulp/bin/gulp.js clean"
+    "clean": "node ./node_modules/gulp/bin/gulp.js clean",
+    "import": "cp -r stencilproj/www/build dev/js"
   },
   "author": "",
   "license": "ISC"

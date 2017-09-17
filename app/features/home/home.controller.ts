@@ -1,11 +1,18 @@
 class HomeController {
   message: string;
   complex: string[];
-  constructor() {
+  static $inject = ['$element'];
+  constructor(private $element: ng.IAugmentedJQuery) {
     this.message = "a lot to do here...";
     this.complex = ["a", "complex", "object"];
   }
 
+  $postLink() {
+    // this is the place to hook up event listeners for stencil (dom) events
+    this.$element.on('onListClick', ev => {
+        console.log('Event cauch in angular', ev);
+    });
+  }
   changeMessage() {
     this.message = this.message + ".";
     console.log("click");
@@ -19,10 +26,8 @@ class HomeController {
 }
 
 angular.module("app").component("exampleComponent", {
-        controller: HomeController,
-        templateUrl: "features/home/home.html"
-})
-
-//angular.module("app").controller("HomeController", HomeController);
+  controller: HomeController,
+  templateUrl: "features/home/home.html"
+});
 
 export {};
